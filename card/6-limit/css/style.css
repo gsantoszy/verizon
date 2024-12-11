@@ -1,0 +1,67 @@
+body {
+    background-color: azure;
+    color: #111;
+}
+.header {
+    background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    color: #111;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    grid-area: top-bar;
+}
+.main-content {
+    max-width: 450px;
+    background-color: #fff;
+    text-align: center;
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+}
+.main-content h2 {
+    margin-bottom: 20px;
+}
+.btn-custom {
+    color: white;
+    border: none;
+    width: 100%;
+    margin-bottom: 10px;
+    background: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+    font-weight: 600;
+    border-radius: 1rem;
+    padding: .75rem 3rem;
+    letter-spacing: .3px;
+    line-height: 1.15;
+}
+
+.btn-custom:hover{
+    color: white !important;
+    background-color: #ff4a49;
+    transform: scale(1.02) !important;
+}
+
+.footer {
+    background-color: #111;
+    /* border-top: solid 1px #e6dddd; */
+    color: #dddddd;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    grid-area: footer;
+    border-bottom: solid 3px #ff2525;
+    padding: 2rem 0.5rem;
+    position: relative;
+    margin-top: 50px;
+}
+.char {
+    border-top: solid 1px #e6007e;
+    background-color: #e6007e;
+    padding: 2px !important;
+}
+
+/* Pontinhos da lista */
+li::marker {
+    color: #089b08;
+}
